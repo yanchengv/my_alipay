@@ -27,10 +27,14 @@ Or install it yourself as:
 
 ```ruby
 MyAlipay.app_id = 'APP_ID'  #APPID即创建应用后生成
+
 MyAlipay.app_private_key = 'APP_PRIVATE_KEY'  #开发者应用私钥，由开发者自己生成
+
 MyAlipay.alipay_public_key = 'ALIPAY_PUBLIC_KEY'  #支付宝公钥，由支付宝生成
+
 MyAlipay.gateway_url = 'URL'   #支付宝网关（固定）,根据个人情况可填写沙箱网关或者正式网关
-MyAlipay.gateway_url = 'RSA2'  #默认为RSA2  商户生成签名字符串所使用的签名算法类型，目前支持RSA2和RSA，推荐使用RSA2
+
+MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使用的签名算法类型，目前支持RSA2和RSA，推荐使用RSA2
 
 ```
 
