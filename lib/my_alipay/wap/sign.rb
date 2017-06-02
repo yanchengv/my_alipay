@@ -4,6 +4,7 @@ module MyAlipay
 
       #rsa2 SHA256
       def self.generate_wap_sign(params)
+        params[:biz_content] = params[:biz_content].to_json
         params = {
             app_id: MyAlipay.app_id,
             method: 'alipay.trade.wap.pay',
