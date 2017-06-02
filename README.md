@@ -52,9 +52,7 @@ MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使�
 params ={
         return_url: 'return_url',
         notify_url: 'notify_url',
-        biz_content: {"subject": "商品名称", "out_trade_no": "L2017052515281049",
-                      "total_amount": "10.00",
-                      "product_code": "QUICK_WAP_PAY"}.to_json
+        biz_content: {subject: "商品名称", out_trade_no: "L2017052515281049",total_amount: "10.00",product_code: "QUICK_WAP_PAY"}
     }
 
 url = MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params
