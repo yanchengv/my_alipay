@@ -33,11 +33,15 @@ MyAlipay.gateway_url = 'URL'   #支付宝网关（固定）,根据个人情况�
 MyAlipay.gateway_url = 'RSA2'  #默认为RSA2  商户生成签名字符串所使用的签名算法类型，目前支持RSA2和RSA，推荐使用RSA2
 
 ```
-## 手机网站支付接口(alipay_trade_wap)
+
+## API
+
+
+- #### 手机网站支付接口(alipay_trade_wap)
 
 ```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
 
-### Example
+- #### Example
 
 ```ruby
 
@@ -56,9 +60,9 @@ redirect_to url #或者在html页面跳转  window.location.href = url
 
 ```
 
-## 支付宝异步通知验签
+- #### 支付宝异步通知验签
 
-### Example
+- #### Example
 
 ```MyAlipay::Wap::Notify.wap_notify params```
 
