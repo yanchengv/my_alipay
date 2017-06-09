@@ -57,8 +57,13 @@ params ={
 
 url = MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params
 
-#跳转到支付页面
-redirect_to url #或者在html页面跳转  window.location.href = url
+
+#显示支付页面方式
+# 1.跳转到支付页面
+redirect_to url 
+
+# 2. 或者在html页面跳转,显示支付页面
+window.location.href = url
 
 ```
 
