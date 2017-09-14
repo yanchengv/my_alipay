@@ -1,8 +1,9 @@
+#通知验签
 module MyAlipay
   module Wap
     module Notify
 
-      def self.wap_notify params
+      def self.verify? params
         params.stringify_keys
         params.delete('sign_type')
         params.delete('controller')
