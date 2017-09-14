@@ -43,7 +43,7 @@ MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使�
 
 - ### 手机网站支付接口(alipay.trade.wap.pay)
 
-```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
+    ```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
 
 - #### Example
 
@@ -70,7 +70,7 @@ window.location.href = url
 
 - ### 电脑网站支付接口(alipay.trade.page.pay)
 
-```MyAlipay::Page::Service.create_alipay_trade_page_pay_url params```
+    ```MyAlipay::Page::Service.create_alipay_trade_page_pay_url params```
 
 - #### Example
 
@@ -98,9 +98,9 @@ window.location.href = url
 
 - ### 支付宝异步通知验签
 
+    ```MyAlipay::Notify.verify? params```
+    
 - #### Example
-
-```MyAlipay::Notify.verify? params```
 
 ```ruby
  def notify
