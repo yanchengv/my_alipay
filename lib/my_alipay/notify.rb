@@ -1,8 +1,6 @@
 #通知验签
 module MyAlipay
-  module Wap
     module Notify
-
       def self.verify? params
         params.stringify_keys
         params.delete('sign_type')
@@ -16,5 +14,4 @@ module MyAlipay
         pkey.verify(digest, sign, sign_str)
       end
     end
-  end
 end
