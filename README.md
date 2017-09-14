@@ -41,9 +41,9 @@ MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使�
 ## API
 
 
-- #### 手机网站支付接口(alipay_trade_wap)
+- ### 手机网站支付接口(alipay.trade.wap.pay)
 
-```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
+    ```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
 
 - #### Example
 
@@ -52,7 +52,7 @@ MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使�
 params ={
         return_url: 'return_url',
         notify_url: 'notify_url',
-        biz_content: {subject: "商品名称", out_trade_no: "L2017052515281049",total_amount: "10.00",product_code: "QUICK_WAP_PAY"}
+        biz_content: {subject: "商品名称", out_trade_no: "L2017052515281049",total_amount: "10.00"}
     }
 
 url = MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params
@@ -67,16 +67,45 @@ window.location.href = url
 
 ```
 
-- #### 支付宝异步通知验签
+
+- ### 电脑网站支付接口(alipay.trade.page.pay)
+
+    ```MyAlipay::Page::Service.create_alipay_trade_page_pay_url params```
 
 - #### Example
 
-```MyAlipay::Wap::Notify.wap_notify params```
+```ruby
+
+params ={
+        return_url: 'return_url',
+        notify_url: 'notify_url',
+        biz_content: {subject: "商品名称", out_trade_no: "L2017052515281050",total_amount: "10.00"}
+    }
+
+url = MyAlipay::Page::Service.create_alipay_trade_page_pay_url params
+
+
+#显示支付页面方式
+# 1.跳转到支付页面
+redirect_to url 
+
+# 2. 或者在html页面跳转,显示支付页面
+window.location.href = url
+
+```
+
+
+
+- ### 支付宝异步通知验签
+
+    ```MyAlipay::Notify.verify? params```
+    
+- #### Example
 
 ```ruby
  def notify
     #验签
-    is_verify = MyAlipay::Wap::Notify.wap_notify params
+    is_verify = MyAlipay::Notify.verify? params
     if is_verify
       #验签成功处理
     else
