@@ -2,7 +2,7 @@ module MyAlipay
   module Utils
 
     def self.params_to_string(params)
-      params.sort.map { |item| item.join('=') }.join('&')
+      params.delete_if{|key,value| !value.present?}.sort.map { |item| item.join('=') }.join('&')
     end
 
     def self.params_to_decoded_string(params)
