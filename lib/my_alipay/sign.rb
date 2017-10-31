@@ -5,11 +5,14 @@ module MyAlipay
       method = options[:method] || 'alipay.trade.wap.pay'
       sign_type = options[:sign_type] || MyAlipay.sign_type
       if method == 'alipay.trade.wap.pay'
-        #手机支付
+        #手机网站支付
         params[:biz_content] = params[:biz_content].merge({product_code: "QUICK_WAP_PAY"}).to_json
       elsif method == 'alipay.trade.page.pay'
         #电脑网站支付
         params[:biz_content] = params[:biz_content].merge({product_code: "FAST_INSTANT_TRADE_PAY"}).to_json
+      elsif method == 'alipay.trade.app.pay'
+        #支付宝app支付
+        params[:biz_content] = params[:biz_content].merge({product_code: "QUICK_MSECURITY_PAY"}).to_json
       end
       params = {
           app_id: MyAlipay.app_id,

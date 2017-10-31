@@ -6,7 +6,8 @@ require 'my_alipay/sign/rsa2'
 require 'my_alipay/sign/md5'
 require 'my_alipay/wap/service'
 require 'my_alipay/wap/test'
-require  'my_alipay/page/service'
+require 'my_alipay/page/service'
+require 'my_alipay/mobile/service'
 
 
 module MyAlipay
