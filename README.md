@@ -41,7 +41,7 @@ MyAlipay.sign_type = 'RSA2'  #默认为RSA2  商户生成签名字符串所使�
 ## API
 
 
-- ### 手机网站支付接口(alipay.trade.wap.pay)
+- ### 手机网站支付接口(alipay.trade.wap.pay)[支付宝手机支付官网API](https://docs.open.alipay.com/203)
 
     ```MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params```
 
@@ -68,7 +68,7 @@ window.location.href = url
 ```
 
 
-- ### 电脑网站支付接口(alipay.trade.page.pay)
+- ### 电脑网站支付接口(alipay.trade.page.pay)[支付宝PC支付官网API](https://docs.open.alipay.com/270)
 
     ```MyAlipay::Page::Service.create_alipay_trade_page_pay_url params```
 
@@ -94,7 +94,7 @@ window.location.href = url
 
 ```
 
-- ### app支付接口(alipay.trade.app.pay)
+- ### app支付接口(alipay.trade.app.pay)[支付宝APP支付官网API](https://docs.open.alipay.com/204)
 
     ```MyAlipay::Mobile::Service.create_alipay_trade_app_pay_url params```
 
