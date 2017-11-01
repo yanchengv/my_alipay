@@ -58,7 +58,7 @@ params ={
 url = MyAlipay::Wap::Service.create_alipay_trade_wap_pay_url params
 
 
-#显示支付页面方式
+# 显示支付页面方式
 # 1.跳转到支付页面
 redirect_to url 
 
@@ -85,7 +85,7 @@ params ={
 url = MyAlipay::Page::Service.create_alipay_trade_page_pay_url params
 
 
-#显示支付页面方式
+# 显示支付页面方式
 # 1.跳转到支付页面
 redirect_to url 
 
@@ -93,6 +93,30 @@ redirect_to url
 window.location.href = url
 
 ```
+
+- ### app支付接口(alipay.trade.app.pay)
+
+    ```MyAlipay::Mobile::Service.create_alipay_trade_app_pay_url params```
+
+- #### Example
+
+```ruby
+
+params ={
+        return_url: 'return_url',
+        notify_url: 'notify_url',
+        biz_content: {subject: "商品名称", out_trade_no: "L2017052515281049",total_amount: "10.00"}
+    }
+
+url = MyAlipay::Mobile::Service.create_alipay_trade_app_pay_url params
+
+ ```ruby
+ 
+# app支付唤起方式
+# 1.根据返回值(不包括http等前缀)，android和ios使用相关sdk唤起支付宝app支付，
+
+  "app_id=2017091308720111\u0026biz_content={\"subject\":\"1\",\"out_trade_no\":12555,\"total_amount\":0.99,\"product_code\":\"QUICK_MSECURITY_PAY\"}\u0026charset=UTF-8\u0026method=alipay.trade.app.pay\u0026notify_url=http://test-api-server.ihaveu.com/api/pay/alipays/notify\u0026sign_type=RSA2\u0026timestamp=2017-11-01 09:54:45\u0026version=1.0\u0026sign=YLVYTiTUK11hSt6z9m67Q70bgEHr4Dawm07%2Bz5LP3Oe%2FlW%2BEKiO%2BizWfx8%2FFZTwkKFxjJLA%2BEmtnYqc4bsbAvOGhG3pJ2AZUVZUglpd%2FhSFpWdrFboEhlhOtguyOngGVk4IBi5ngqCmCHODZJYaUYl3W2cWpjjBtSnPgkNYva628nouSAMWHMnmjgy7k%2B9ef6%2FSXig3yndzEQBYpgq3CZw%2F77Ga2sIYgTu9%2BLvoepVCznlhcgVtj0LjLL7lAbiXFpuHx%2B%2F2NSNDAfhuEbu6AKtF6KU0rbl3FDdOXd0OFX8nnT%2FmN7GpItlYb5NB0%2BoeCcenv7f%2FTrJ3fwyAKcCtPhg%3D%3D"
+  ```
 
 
 
