@@ -113,8 +113,6 @@ params ={
     }
 
 url = MyAlipay::Mobile::Service.create_alipay_trade_app_pay_url params
-
- ```ruby
  
 # app支付唤起方式
 # 1.根据返回值(不包括http等前缀)，android和ios使用相关sdk唤起支付宝app支付，
