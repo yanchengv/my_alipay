@@ -2,7 +2,7 @@ require 'openssl'
 require 'base64'
 module MyAlipay
   module Sign
-    class Rsa
+    class RSA
       def self.sign(key, string)
         rsa = OpenSSL::PKey::RSA.new(Base64.decode64(key))
         digest = OpenSSL::Digest::SHA1.new
