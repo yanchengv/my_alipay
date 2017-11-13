@@ -8,7 +8,7 @@ module MyAlipay
 
       #验签
       def self.verify?(key, string, sign)
-        sign == sign(key, string)
+        sign == sign(key, string)[:sign]
       end
     end
   end
