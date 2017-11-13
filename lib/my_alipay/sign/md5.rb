@@ -2,7 +2,8 @@ module MyAlipay
   module Sign
     class MD5
       def self.sign(key, string)
-        Digest::MD5.hexdigest("#{string}#{key}")
+        sign = Digest::MD5.hexdigest("#{string}#{key}")
+        {sign_str: string, sign: sign}
       end
 
       #验签
