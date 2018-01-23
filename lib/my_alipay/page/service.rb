@@ -5,7 +5,8 @@ module MyAlipay
 
       #电脑网站支付url
       def self.create_alipay_trade_page_pay_url(params, options = {})
-        sign_params = MyAlipay::Sign.generate params,{method: 'alipay.trade.page.pay'}
+        params.merge!({method: 'alipay.trade.page.pay'})[:biz_content].merge!({product_code: "FAST_INSTANT_TRADE_PAY"})
+        sign_params = MyAlipay::Sign.generate params
         MyAlipay.gateway_url + '?' + sign_params[:sign_str] + "&sign=#{ERB::Util.url_encode(sign_params[:sign])}"
       end
 

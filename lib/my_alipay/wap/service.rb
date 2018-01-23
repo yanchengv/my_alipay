@@ -5,10 +5,10 @@ module MyAlipay
 
       #手机支付url
       def self.create_alipay_trade_wap_pay_url(params, options = {})
-        sign_params = MyAlipay::Sign.generate params,{method: 'alipay.trade.wap.pay'}
+        params.merge!({method: 'alipay.trade.wap.pay'})[:biz_content].merge!({product_code: "QUICK_WAP_PAY"})
+        sign_params = MyAlipay::Sign.generate params
         MyAlipay.gateway_url + '?' + sign_params[:sign_str] + "&sign=#{ERB::Util.url_encode(sign_params[:sign])}"
       end
-
 
 
     end

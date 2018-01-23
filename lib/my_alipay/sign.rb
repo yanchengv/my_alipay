@@ -2,28 +2,16 @@ module MyAlipay
   module Sign
 
     def self.generate(params, options = {})
-      method = options[:method]# || 'alipay.trade.wap.pay'
       sign_type = options[:sign_type] || MyAlipay.sign_type
-      if method == 'alipay.trade.wap.pay'
-        #手机网站支付
-        params[:biz_content] = params[:biz_content].merge({product_code: "QUICK_WAP_PAY"}).to_json
-      elsif method == 'alipay.trade.page.pay'
-        #电脑网站支付
-        params[:biz_content] = params[:biz_content].merge({product_code: "FAST_INSTANT_TRADE_PAY"}).to_json
-      elsif method == 'alipay.trade.app.pay'
-        #支付宝app支付
-        params[:biz_content] = params[:biz_content].merge({product_code: "QUICK_MSECURITY_PAY"}).to_json
-      end
-      params = {
+      params[:biz_content] = params[:biz_content].to_json
+      params.merge!({
           app_id: MyAlipay.app_id,
-          method: method,
           charset: 'UTF-8',
           #format: 'JSON',
           sign_type: 'RSA2',
           timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S'),
-          version: '1.0',
-          biz_content: ''
-      }.merge(params)
+          version: '1.0'
+      })
       hash_str = params.stringify_keys #{a:1,b:2} 转换成 {'a'= '1','b'='2'}
       sign_str = MyAlipay::Utils.params_to_string hash_str
 

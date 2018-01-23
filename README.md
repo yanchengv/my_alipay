@@ -1,8 +1,8 @@
 # MyAlipay
 
-A gem for alipay, support wap api of 2017
+A gem for alipay, support wap api
 
-支持阿里手机支付2017最新版本的接口
+支持阿里支付最新版本的接口
 
 您在使用之前先了解官网如下api文档
 - [支付宝手机支付官网API](https://docs.open.alipay.com/203)
