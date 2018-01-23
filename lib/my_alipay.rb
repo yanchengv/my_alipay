@@ -9,6 +9,7 @@ require 'my_alipay/wap/service'
 require 'my_alipay/wap/test'
 require 'my_alipay/page/service'
 require 'my_alipay/mobile/service'
+require 'my_alipay/client'
 
 
 module MyAlipay

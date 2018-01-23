@@ -2,7 +2,7 @@ module MyAlipay
   module Sign
 
     def self.generate(params, options = {})
-      method = options[:method] || 'alipay.trade.wap.pay'
+      method = options[:method]# || 'alipay.trade.wap.pay'
       sign_type = options[:sign_type] || MyAlipay.sign_type
       if method == 'alipay.trade.wap.pay'
         #手机网站支付
