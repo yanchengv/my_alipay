@@ -3,7 +3,8 @@ module MyAlipay
 
     def self.generate(params, options = {})
       sign_type = options[:sign_type] || MyAlipay.sign_type
-      params[:biz_content] = params[:biz_content].to_json
+      #因为中文乱码问题，所以替换params[:biz_content] = params[:biz_content].to_json
+      params[:biz_content] = JSON.generate(params[:biz_content],ascii_only: true)
       params.merge!({
           app_id: MyAlipay.app_id,
           charset: 'UTF-8',
